@@ -1,0 +1,44 @@
+[
+    {
+      "id": 62589,
+      "fullName": "shukurillo",
+      "phoneNumber": "98-933-3333",
+      "email": "shukurillo@gmai.com",
+      "tag": "family"
+    },
+    {
+      "id": 752441,
+      "fullName": "Sergei Ivanov",
+      "phoneNumber": "77-933-3333",
+      "email": "sergei@gmai.com",
+      "tag": "colleague"
+    },
+    {
+      "id": 34611,
+      "fullName": "Rinat Odnoklasnik",
+      "phoneNumber": "93-444-3333",
+      "email": "rinat@gmai.com",
+      "tag": "friend"
+    },
+    {
+      "id": 237518,
+      "fullName": "Jim Smith Junior",
+      "phoneNumber": "98-777-2244",
+      "email": "jim@gmail.com",
+      "tag": "friend"
+    },
+    {
+      "id": 955780,
+      "fullName": "Jakhongir Khamidov",
+      "phoneNumber": "77-333-2211",
+      "email": "jakhongir@gmai.com",
+      "tag": "colleague"
+    },
+    {
+      "id": 5467,
+      "fullName": "Ulugbek Khasanov",
+      "phoneNumber": "33-933-3333",
+      "email": "ulugbek@gmai.com",
+      "tag": "family"
+    }
+  ]
