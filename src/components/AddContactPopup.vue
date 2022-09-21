@@ -71,8 +71,8 @@ function saveUpdateContact() {
           v-model="contact.fullName"
           required
         />
-        <div class="flex w-full mt-3">
-          <div class="w-1/2 mr-2">
+        <div class="lg:flex w-full mt-3">
+          <div class="lg:w-1/2 mr-2">
             <label
               class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
             >
@@ -87,7 +87,7 @@ function saveUpdateContact() {
               required
             />
           </div>
-          <div class="w-1/2 ml-2">
+          <div class="lg:w-1/2 lg:ml-2 lg:mt-0 mt-3">
             <label
               class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
               >Email адрес
@@ -118,10 +118,10 @@ function saveUpdateContact() {
           <redButton class="popup-close" @click.native="TogglePopup()"
             >Закрыть форму</redButton
           >
-          <myButton v-if="!changeContactId" class="ml-2" type="submit"
+          <myButton v-if="!changeContactId" class="lg:ml-2" type="submit"
             >Добавить</myButton
           >
-          <myButton v-else class="ml-2" type="submit">Обновить</myButton>
+          <myButton v-else class="lg:ml-2" type="submit">Обновить</myButton>
         </div>
       </form>
     </div>

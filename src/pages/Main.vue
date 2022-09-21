@@ -42,28 +42,28 @@ watch(filterQuery, (newQuery, prevQuery) => {
       :changeContactId="changeContactId"
     />
 
-    <div class="w-3/4 mx-auto text-center">
-      <p class="text-3xl mb-3">Выберите поле для фильтра</p>
-      <div class="flex">
+    <div class="lg:w-3/4 mx-auto text-center">
+      <p class="text-3xl mb-2">Выберите поле для фильтра</p>
+      <div class="lg:flex w-full">
         <radioButton
           @change.native="filterField = 'fullName'"
           :checked="true"
-          class="w-1/4 mr-3"
+          class="lg:w-1/4 lg:mr-3"
           :label="'ФИО'"
         />
         <radioButton
           @change.native="filterField = 'phoneNumber'"
-          class="w-1/4 mr-3"
+          class="lg:w-1/4 lg:mr-3"
           :label="'Номер телефона'"
         />
         <radioButton
           @change.native="filterField = 'email'"
-          class="w-1/4 mr-3"
+          class="lg:w-1/4 lg:mr-3"
           :label="'Email адрес'"
         />
         <radioButton
           @change.native="filterField = 'tag'"
-          class="w-1/4"
+          class="lg:w-1/4"
           :label="'Тег'"
         />
       </div>

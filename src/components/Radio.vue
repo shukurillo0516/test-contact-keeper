@@ -4,7 +4,7 @@ defineProps(["label", "checked"]);
 
 <template>
   <div
-    class="flex shadow-md px-4 items-center rounded border border-gray-200 dark:border-gray-700"
+    class="flex shadow-md px-4 mt-2 items-center rounded border border-gray-200 dark:border-gray-700"
   >
     <input
       id="bordered-radio-1"
