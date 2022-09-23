@@ -24,7 +24,11 @@ let filterField = ref("fullName");
 
 watch(filterQuery, (newQuery, prevQuery) => {
   if (newQuery) {
-    let payload = { field: filterField.value, val: newQuery };
+    let payload = {
+      field: filterField.value,
+      val: newQuery,
+      grow: newQuery.length >= prevQuery.length,
+    };
     store.commit("filterContacts", payload);
   } else {
     store.commit("loadContacts");

@@ -1,5 +1,9 @@
 import { createStore } from "vuex";
-import { compareObjects, updateStorage } from "../service/helper.js";
+import {
+  compareObjects,
+  updateStorage,
+  loadStorageContacts,
+} from "../service/helper.js";
 
 import dummyData from "../data/dummyData.json";
 
@@ -35,7 +39,10 @@ const store = createStore({
       updateStorage(state.contacts);
     },
     filterContacts(state, payload) {
-      let { field, val } = payload;
+      let { field, val, grow } = payload;
+      if (!grow) {
+        state.contacts = loadStorageContacts();
+      }
       state.contacts = state.contacts.filter((item) =>
         item[field].toLowerCase().includes(val.toLowerCase())
       );

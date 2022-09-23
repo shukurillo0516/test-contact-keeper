@@ -24,4 +24,6 @@ export function compareObjects(object1, object2, key, asc) {
 export function updateStorage(contacts) {
   localStorage.setItem("contacts", JSON.stringify(contacts));
 }
-export function loadContacts() {}
+export function loadStorageContacts() {
+  return JSON.parse(localStorage.getItem("contacts"));
+}

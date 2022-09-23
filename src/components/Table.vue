@@ -1,7 +1,6 @@
 <script setup>
 import { ref } from "vue";
 import { computed } from "vue";
-import { defineEmits } from "vue";
 import { useStore } from "vuex";
 import redButton from "./RedButton.vue";
 
