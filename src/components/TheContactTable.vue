@@ -2,7 +2,7 @@
 import { ref } from "vue";
 import { computed } from "vue";
 import { useStore } from "vuex";
-import redButton from "./RedButton.vue";
+import RedButton from "./RedButton.vue";
 
 const store = useStore();
 const contacts = computed(() => store.state.contacts);
@@ -36,8 +36,8 @@ function filterContacts(field, asc) {
 </script>
 
 <template>
-  <redButton :disabled="!selectedItems.length" @click.native="deleteItems()"
-    >удалить</redButton
+  <RedButton :disabled="!selectedItems.length" @click.native="deleteItems()"
+    >удалить</RedButton
   >
 
   <div class="overflow-x-auto relative drop-shadow-lg sm:rounded-lg border">

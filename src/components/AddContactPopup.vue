@@ -3,17 +3,23 @@ import { ref } from "vue";
 import { useStore } from "vuex";
 import { onMounted } from "vue";
 import Swal from "sweetalert2";
-import myButton from "./Button.vue";
-import redButton from "./RedButton.vue";
+import BaseButton from "./DefaultButton.vue";
+import RedButton from "./RedButton.vue";
 
 const props = defineProps(["TogglePopup", "changeContactId"]);
 
 const store = useStore();
+// let contact = ref({
+//   fullName: "",
+//   phoneNumber: "",
+//   email: "",
+//   tag: "",
+// });
 let contact = ref({
-  fullName: "",
-  phoneNumber: "",
-  email: "",
-  tag: "",
+  fullName: "test",
+  phoneNumber: "88-222-4444",
+  email: "sh@gmail.com",
+  tag: "family",
 });
 
 onMounted(() => {
@@ -50,7 +56,7 @@ function saveUpdateContact() {
   }
   setID();
   store.commit("addContact", contact.value);
-  clearForm();
+  // clearForm();
   Swal.fire("Успех!", "Контакт успешно сохранен", "success");
 }
 </script>
@@ -115,13 +121,13 @@ function saveUpdateContact() {
           />
         </div>
         <div class="mt-3">
-          <redButton class="popup-close" @click.native="TogglePopup()"
-            >Закрыть форму</redButton
+          <RedButton class="popup-close" @click.native="TogglePopup()"
+            >Закрыть форму</RedButton
           >
-          <myButton v-if="!changeContactId" class="lg:ml-2" type="submit"
-            >Добавить</myButton
+          <BaseButton v-if="!changeContactId" class="lg:ml-2" type="submit"
+            >Добавить</BaseButton
           >
-          <myButton v-else class="lg:ml-2" type="submit">Обновить</myButton>
+          <BaseButton v-else class="lg:ml-2" type="submit">Обновить</BaseButton>
         </div>
       </form>
     </div>

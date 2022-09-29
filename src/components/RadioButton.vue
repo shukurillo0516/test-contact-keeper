@@ -1,5 +1,12 @@
 <script setup>
-defineProps(["label", "checked"]);
+defineProps({
+  label: {
+    type: String,
+  },
+  checked: {
+    type: Boolean,
+  },
+});
 </script>
 
 <template>

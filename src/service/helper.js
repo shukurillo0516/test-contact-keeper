@@ -1,3 +1,6 @@
+// This module serves to help reuse functions,
+// instead of implementing them every time in a component or .vue file
+
 export function compareObjects(object1, object2, key, asc) {
   const obj1 = object1[key].toUpperCase();
   const obj2 = object2[key].toUpperCase();

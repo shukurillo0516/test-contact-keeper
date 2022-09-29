@@ -1,10 +1,10 @@
 <script setup>
 import { ref, watch } from "vue";
 import { useStore } from "vuex";
-import myButton from "../components/Button.vue";
+import BaseButton from "../components/DefaultButton.vue";
 import AddContactPopup from "../components/AddContactPopup.vue";
-import myTable from "../components/Table.vue";
-import radioButton from "../components/Radio.vue";
+import TheTable from "../components/TheContactTable.vue";
+import RadioButton from "../components/RadioButton.vue";
 
 let store = useStore();
 
@@ -35,10 +35,11 @@ watch(filterQuery, (newQuery, prevQuery) => {
   }
 });
 </script>
+
 <template>
   <div class="w-full">
-    <myButton @click.native="(changeContactId = ''), togglePopup()"
-      >добавить контакт</myButton
+    <BaseButton @click.native="(changeContactId = ''), togglePopup()"
+      >добавить контакт</BaseButton
     >
     <AddContactPopup
       v-if="popupTrigger"
@@ -46,32 +47,32 @@ watch(filterQuery, (newQuery, prevQuery) => {
       :changeContactId="changeContactId"
     />
 
-    <div class="lg:w-3/4 mx-auto text-center">
+    <div name="filter" class="lg:w-3/4 mx-auto text-center">
       <p class="text-3xl mb-2">Выберите поле для фильтра</p>
       <div class="lg:flex w-full">
-        <radioButton
+        <RadioButton
           @change.native="filterField = 'fullName'"
           :checked="true"
           class="lg:w-1/4 lg:mr-3"
           :label="'ФИО'"
         />
-        <radioButton
+        <RadioButton
           @change.native="filterField = 'phoneNumber'"
           class="lg:w-1/4 lg:mr-3"
           :label="'Номер телефона'"
         />
-        <radioButton
+        <RadioButton
           @change.native="filterField = 'email'"
           class="lg:w-1/4 lg:mr-3"
           :label="'Email адрес'"
         />
-        <radioButton
+        <RadioButton
           @change.native="filterField = 'tag'"
           class="lg:w-1/4"
           :label="'Тег'"
         />
       </div>
-      <div class="flex justify-center mt-4">
+      <div name="filter-input" class="flex justify-center mt-4">
         <div class="w-full mr-2">
           <input
             type="text"
@@ -80,10 +81,10 @@ watch(filterQuery, (newQuery, prevQuery) => {
             v-model="filterQuery"
           />
         </div>
-        <myButton @click.native="filterQuery = ''">очистить</myButton>
+        <BaseButton @click.native="filterQuery = ''">очистить</BaseButton>
       </div>
     </div>
 
-    <myTable class="mt-3" @update-contact="(id) => updateContact(id)" />
+    <TheTable class="mt-3" @update-contact="(id) => updateContact(id)" />
   </div>
 </template>
